@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :skills
   resources :admins
   resources :teachers
+
+  get '/teachers/fromcaregiver/:caregiver_id', to: 'teachers#teachers_from_caregiver', as: 'teachers_from_caregiver'
+
+
   resources :caregivers
 
   get '/caregivers/fromteacher/:teacher_id', to: 'caregivers#caregivers_from_teacher', as: 'caregiver_from_teacher'
